@@ -33,16 +33,15 @@
 import Foundation
 
 /**
- An intent can throw custom `Error` values. If the `Error` conforms to `CustomLocalizedStringResourceConvertible`, the system will use
- the localized text as part of the error handling.
- */
+An intent can throw custom `Error` values. If the `Error` conforms to `CustomLocalizedStringResourceConvertible`, the system will use the localized text as part of the error handling.
+*/
 enum SessionIntentError: Error, CustomLocalizedStringResourceConvertible {
-    case sessionNotFound
-    
-    var localizedStringResource: LocalizedStringResource {
-        switch self {
-        case .sessionNotFound:
-            return "Could not find the requested session."
-        }
+  case sessionNotFound
+
+  var localizedStringResource: LocalizedStringResource {
+    switch self {
+    case .sessionNotFound:
+      return "Could not find the requested session."
     }
+  }
 }

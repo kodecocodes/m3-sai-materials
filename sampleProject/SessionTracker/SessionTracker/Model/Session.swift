@@ -34,27 +34,27 @@ import AppIntents
 import Foundation
 
 /**
- Represents the fixed properties from `TrailData`, such as the trail name and length, but also properties that vary based on the individual,
- such as their distance to the trail.
- */
+Represents the fixed properties from `TrailData`, such as the trail name and length, but also properties that vary based on the individual,
+such as their distance to the trail.
+*/
 struct Session: Identifiable, Hashable, Sendable {
   /// The trail's stable identifier.
   let id: Int
-  
+
   /// The session's name.
   let name: String
-  
+
   /// The resource name of an image for the session.
   let featuredImage: String
-  
+
   /// A description of the session
   let sessionDescription: String
-  
+
   /// A description of the session
   let sessionLength: String
-  
+
   var viewed: Bool
-  
+
   init(data: SessionData) {
     id = data.id
     name = data.name
@@ -62,13 +62,12 @@ struct Session: Identifiable, Hashable, Sendable {
     sessionDescription = data.sessionDescription
     sessionLength = data.sessionLength
     viewed = data.viewed
-    
   }
-  
+
   static func == (lhs: Session, rhs: Session) -> Bool {
     lhs.id == rhs.id
   }
-  
+
   func hash(into hasher: inout Hasher) {
     hasher.combine(id)
   }

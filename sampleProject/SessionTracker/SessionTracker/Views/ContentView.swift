@@ -33,18 +33,19 @@
 import SwiftUI
 
 struct ContentView: View {
-  @Environment(NavigationModel.self) private var navigationModel
-  
+  @Environment(NavigationModel.self)
+  private var navigationModel
+
   var body: some View {
-      @Bindable var navigationModel = navigationModel
-      NavigationSplitView(columnVisibility: $navigationModel.columnVisibility) {
-          SidebarColumn()
-              .navigationSplitViewColumnWidth(min: 200, ideal: 350)
-      } content: {
-          SessionList()
-      } detail: {
-          SessionDetailColumn()
-      }
+    @Bindable var navigationModel = navigationModel
+    NavigationSplitView(columnVisibility: $navigationModel.columnVisibility) {
+      SidebarColumn()
+        .navigationSplitViewColumnWidth(min: 200, ideal: 350)
+    } content: {
+      SessionList()
+    } detail: {
+      SessionDetailColumn()
+    }
   }
 }
 

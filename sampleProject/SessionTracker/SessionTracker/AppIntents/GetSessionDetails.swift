@@ -34,50 +34,51 @@ import AppIntents
 import Foundation
 
 struct GetSessionDetails: AppIntent {
-    
-    static var title: LocalizedStringResource = "Get Session Details"
-    static var description = IntentDescription("Provides complete details on a sessions, including the runtime and topics.",
-                                               categoryName: "Discover")
-    
-    /**
-     A sentence that describes the intent, incorporating parameters as a natural part of the sentence. The Shortcuts editor displays this sentence
-     inline. Without the parameter summary, the Shortcuts editor displays the `trail` parameter as a separate row, making the intent harder to
-     configure in a shortcut.
-     */
-    static var parameterSummary: some ParameterSummary {
-        Summary("Get information on \(\.$session)")
+  static var title: LocalizedStringResource = "Get Session Details"
+  static var description =
+    IntentDescription(
+      "Provides complete details on a sessions, including the runtime and topics.",
+      categoryName: "Discover")
+
+  /**
+  A sentence that describes the intent, incorporating parameters as a natural part of the sentence. The Shortcuts editor displays this sentence
+  inline. Without the parameter summary, the Shortcuts editor displays the `trail` parameter as a separate row, making the intent harder to
+  configure in a shortcut.
+  */
+  static var parameterSummary: some ParameterSummary {
+    Summary("Get information on \(\.$session)")
+  }
+
+  /**
+  The trail this intent gets information on. Either the individual provides this parameter when the intent runs, or it comes preconfigured
+  in a shortcut.
+  - Tag: parameter
+  */
+  @Parameter(title: "Session", description: "The session to get information on.")
+  var session: SessionEntity
+
+  @Dependency private var sessionManager: SessionDataManager
+
+  /// - Tag: custom_response
+  func perform() async throws -> some IntentResult & ReturnsValue<SessionEntity> & ProvidesDialog & ShowsSnippetView {
+    guard let sessionData = sessionManager.session(with: session.id) else {
+      throw SessionIntentError.sessionNotFound
     }
 
     /**
-     The trail this intent gets information on. Either the individual provides this parameter when the intent runs, or it comes preconfigured
-     in a shortcut.
-     - Tag: parameter
-     */
-    @Parameter(title: "Session", description: "The session to get information on.")
-    var session: SessionEntity
-    
-    @Dependency
-    private var sessionManager: SessionDataManager
-    
-    /// - Tag: custom_response
-    func perform() async throws -> some IntentResult & ReturnsValue<SessionEntity> & ProvidesDialog & ShowsSnippetView {
-        guard let sessionData = sessionManager.session(with: session.id) else {
-            throw SessionIntentError.sessionNotFound
-        }
-                
-        /**
-         You provide a custom view by conforming the return type of the `perform()` function to the `ShowsSnippetView` protocol.
-         */
-        let snippet = SessionSiriDetailView(session: sessionData)
-        
-        /**
-         This intent displays a custom view that includes the trail conditions as part of the view. The dialog includes the trail conditions when
-         the system can only read the response, but not display it. When the system can display the response, the dialog omits the trail
-         conditions.
-         */
-      let dialog = IntentDialog(full: "The runtime reported for \(session.name) indicate: \(session.sessionDescription).",
-                                  supporting: "Here's the information on the requested session.")
-        
-        return .result(value: session, dialog: dialog, view: snippet)
-    }
+    You provide a custom view by conforming the return type of the `perform()` function to the `ShowsSnippetView` protocol.
+    */
+    let snippet = SessionSiriDetailView(session: sessionData)
+
+    /**
+    This intent displays a custom view that includes the trail conditions as part of the view. The dialog includes the trail conditions when
+    the system can only read the response, but not display it. When the system can display the response, the dialog omits the trail
+    conditions.
+    */
+    let dialog = IntentDialog(
+      full: "The runtime reported for \(session.name) indicate: \(session.sessionDescription).",
+      supporting: "Here's the information on the requested session.")
+
+    return .result(value: session, dialog: dialog, view: snippet)
+  }
 }

@@ -33,21 +33,20 @@
 import AppIntents
 
 struct OpenSessionIntent: AppIntent, OpenIntent {
-  
   static let title: LocalizedStringResource = "Open Session"
-  
+
   @Parameter(title: "Session")
   var target: SessionEntity
-  
+
   func perform() async throws -> some IntentResult {
-    await NavigationModel.shared.navigate(to: target)
+    await NavigationModel.shared.navigate(toSession: target)
     return .result()
   }
-  
+
   static var parameterSummary: some ParameterSummary {
     Summary("Open \(\.$target)")
   }
-  
-  //TODO this needs a universal link to open the app to the right page see 12:38 in https://developer.apple.com/videos/play/wwdc2024/10134/?time=701
+
+  // TODO this needs a universal link to open the app to the right page see 12:38 in https://developer.apple.com/videos/play/wwdc2024/10134/?time=701
   // or does it?  can't I tell the navigation model to go to that specific one?
 }

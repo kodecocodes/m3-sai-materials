@@ -34,7 +34,7 @@ import SwiftUI
 
 struct SessionSiriDetailView: View {
   var session: Session
-  
+
   var body: some View {
     HStack {
       Spacer()
@@ -43,7 +43,7 @@ struct SessionSiriDetailView: View {
           .resizable()
           .aspectRatio(contentMode: .fit)
           .frame(height: 300)
-        
+
         VStack {
           Text(session.name)
             .font(.title)
@@ -56,4 +56,3 @@ struct SessionSiriDetailView: View {
     }
   }
 }
-

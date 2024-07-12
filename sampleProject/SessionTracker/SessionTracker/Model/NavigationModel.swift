@@ -36,32 +36,32 @@ import SwiftUI
 
 /// An observable object that manages the selection events for `NavigationSplitView`.
 @MainActor
-@Observable class NavigationModel {
-  
+@Observable
+class NavigationModel {
   var searchText = ""
-  
+
   static let shared = NavigationModel(selectedCollection: SessionDataManager.shared.favoritesCollection)
-  
+
   /// The selected item in `SidebarColumn`.
   var selectedCollection: SessionCollection?
-  
+
   /// The selected item in the `NavigationSplitView` content view.
   var selectedSession: Session?
-  
+
   /// The column visibility in the `NavigationSplitView`.
   var columnVisibility: NavigationSplitViewVisibility
-  
+
   init(selectedCollection: SessionCollection? = nil, columnVisibility: NavigationSplitViewVisibility = .all) {
     self.selectedCollection = selectedCollection
     self.columnVisibility = columnVisibility
   }
-  
-  func navigate(to: SessionEntity) {
-    self.selectedSession = SessionDataManager.shared.session(with: to.id)
+
+  func navigate(toSession: SessionEntity) {
+    self.selectedSession = SessionDataManager.shared.session(with: toSession.id)
   }
-  
+
   func openSearch(with criteria: String) {
-      searchText = criteria
-//      libraryPath = NavigationPath()
+    searchText = criteria
+    //      libraryPath = NavigationPath()
   }
 }
