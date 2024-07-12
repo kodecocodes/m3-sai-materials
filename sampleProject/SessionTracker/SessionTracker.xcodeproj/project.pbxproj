@@ -54,8 +54,8 @@
 		040174132C3B2C32003175E0 /* SidebarColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarColumn.swift; sourceTree = "<group>"; };
 		040174152C3B2C53003175E0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		040174182C3B2CE8003175E0 /* SessionData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SessionData.plist; sourceTree = "<group>"; };
+		0406421B2C40B9DF0047D40F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0474DB662C3CB62F0097D5A7 /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
-		0474DB6A2C3CBB1E0097D5A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0474DB6B2C3CC7CF0097D5A7 /* OpenSessionIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSessionIntent.swift; sourceTree = "<group>"; };
 		0474DB6D2C3E244A0097D5A7 /* SearchCodeBlockIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCodeBlockIntent.swift; sourceTree = "<group>"; };
 		1839F4AF25190F2A00BB00F1 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
@@ -220,6 +220,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 18D775B422AD944300AE281E;
 			productRefGroup = 18D775BE22AD944300AE281E /* Products */;
@@ -303,7 +304,7 @@
 		18D775DA22AD963800AE281E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0474DB6A2C3CBB1E0097D5A7 /* en */,
+				0406421B2C40B9DF0047D40F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
