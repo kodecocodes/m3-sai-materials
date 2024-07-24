@@ -55,7 +55,7 @@ struct SessionEntity: AppEntity, IndexedEntity {
   }
 
   /**
-  Provide the system with the interface required to query `TrailEntity` structures.
+  Provide the system with the interface required to query `SessionEntity` structures.
   - Tag: default_query
   */
   static var defaultQuery = SessionEntityQuery()
@@ -65,7 +65,7 @@ struct SessionEntity: AppEntity, IndexedEntity {
 
   /**
   The sessions's name. The `EntityProperty` property wrapper makes this property's data available to the system as part of the intent,
-  such as when an intent returns a trail in a shortcut.
+  such as when an intent returns a session in a shortcut.
   - Tag: entity_property
   */
   @Property(title: "Session Name")
@@ -86,7 +86,7 @@ struct SessionEntity: AppEntity, IndexedEntity {
   var sessionLength: String
 
   /**
-  Information on how to display the entity to people — for example, a string like the trail name. Include the optional subtitle
+  Information on how to display the entity to people — for example, a string like the session name. Include the optional subtitle
   and image for a visually rich display.
   */
 

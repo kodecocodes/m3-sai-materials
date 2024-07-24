@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>collections</key>
+	<array>
+		<dict>
+			<key>symbolName</key>
+			<string>star.circle</string>
+			<key>id</key>
+			<integer>1</integer>
+			<key>collectionType</key>
+			<integer>0</integer>
+			<key>displayName</key>
+			<string>Favorites</string>
+			<key>members</key>
+			<array>
+				<integer>1</integer>
+				<integer>3</integer>
+			</array>
+		</dict>
+	</array>
+	<key>sessions</key>
+	<array>
+		<dict>
+			<key>viewed</key>
+			<false/>
+			<key>imageName</key>
+			<string>Session1Image.png</string>
+			<key>name</key>
+			<string>Session 1</string>
+			<key>sessionDescription</key>
+			<string>This is session 1</string>
+			<key>sessionLength</key>
+			<string>18:43</string>
+			<key>id</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>viewed</key>
+			<false/>
+			<key>imageName</key>
+			<string>Session2Image.png</string>
+			<key>name</key>
+			<string>Session 2</string>
+			<key>sessionDescription</key>
+			<string>This is session 2</string>
+			<key>sessionLength</key>
+			<string>8:43</string>
+			<key>id</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>viewed</key>
+			<false/>
+			<key>imageName</key>
+			<string>Session3Image.png</string>
+			<key>name</key>
+			<string>Session 3</string>
+			<key>sessionDescription</key>
+			<string>This is session 3</string>
+			<key>sessionLength</key>
+			<string>28:43</string>
+			<key>id</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+</dict>
+</plist>
