@@ -57,6 +57,7 @@ class NavigationModel {
   }
 
   func navigate(toSession: SessionEntity) {
+    self.selectedCollection = SessionDataManager.shared.completeSessionCollection
     self.selectedSession = SessionDataManager.shared.session(with: toSession.id)
   }
 }
