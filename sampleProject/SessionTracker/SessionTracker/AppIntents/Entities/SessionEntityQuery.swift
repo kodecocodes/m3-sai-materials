@@ -32,7 +32,6 @@
 
 import AppIntents
 import Foundation
-import OSLog
 
 /**
 An `EntityQuery` provides the basis for working with the app's custom types through the `AppEntity` protocol, allowing
@@ -42,8 +41,7 @@ struct SessionEntityQuery: EntityQuery {
   @Dependency var sessionManager: SessionDataManager
 
   /**
-  All entity queries need to locate specific entities through their unique ID. When someone creates a shortcut and populates fields with
-  specific values, the system stores and looks up the values through their unique identifiers.
+  All entity queries need to locate specific entities through their unique ID. When someone creates a shortcut and populates fields with specific values, the system stores and looks up the values through their unique identifiers.
 
   - Tag: query_by_id
   */
@@ -52,6 +50,7 @@ struct SessionEntityQuery: EntityQuery {
       .map { SessionEntity(session: $0) }
   }
 
+  //LESSON 2
   /**
   - Returns: The most likely choices relevant to the individual, such as the contents of a favorites list. The system displays these values as
   a list of options for the entities. For example, configuring the Get Trail Info intent in the Shortcuts app will show these values

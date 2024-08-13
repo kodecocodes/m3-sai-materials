@@ -41,6 +41,7 @@ conform an existing structure in an app to `AppEntity`, or to create a separate 
 tailor the structure to contain the minimum data required. For example, `Session` declares a separate `recentImages` property that none of the
 intents need. Because this property may be sizable or expensive to retrieve, the system omits this property from the definition of `SessionEntity`.
 */
+@AssistantEntity(schema: .browser.tab)
 struct SessionEntity: AppEntity, IndexedEntity {
   /**
   A localized name representing this entity as a concept people are familiar with in the app, including
@@ -55,7 +56,7 @@ struct SessionEntity: AppEntity, IndexedEntity {
   }
 
   /**
-  Provide the system with the interface required to query `TrailEntity` structures.
+  Provide the system with the interface required to query `SessionEntity` structures.
   - Tag: default_query
   */
   static var defaultQuery = SessionEntityQuery()
@@ -65,11 +66,10 @@ struct SessionEntity: AppEntity, IndexedEntity {
 
   /**
   The sessions's name. The `EntityProperty` property wrapper makes this property's data available to the system as part of the intent,
-  such as when an intent returns a trail in a shortcut.
+  such as when an intent returns a session in a shortcut.
   - Tag: entity_property
   */
-  @Property(title: "Session Name")
-  var name: String
+  @Property var name: String
 
   /**
   The name of the featured image. Since people can't query for the image name in this app's intents, it isn't declared as an `EntityProperty` with
@@ -79,21 +79,25 @@ struct SessionEntity: AppEntity, IndexedEntity {
 
   /// A description of the session
   @Property(title: "Session Description")
-  var sessionDescription: String
+  var sessionDescription: String?
 
   /// A description of the session
   @Property(title: "Session Length")
-  var sessionLength: String
+  var sessionLength: String?
+
+  var url: URL?
+
+  var isPrivate: Bool
 
   /**
-  Information on how to display the entity to people — for example, a string like the trail name. Include the optional subtitle
+  Information on how to display the entity to people — for example, a string like the session name. Include the optional subtitle
   and image for a visually rich display.
   */
 
   var displayRepresentation: DisplayRepresentation {
-    DisplayRepresentation(
+    return DisplayRepresentation(
       title: "\(name)",
-      subtitle: "\(sessionDescription)",
+      subtitle: "\(sessionDescription!)",
       image: DisplayRepresentation.Image(named: imageName))
   }
 
@@ -103,5 +107,6 @@ struct SessionEntity: AppEntity, IndexedEntity {
     self.name = session.name
     self.sessionDescription = session.sessionDescription
     self.sessionLength = session.sessionLength
+    self.url = session.url
   }
 }

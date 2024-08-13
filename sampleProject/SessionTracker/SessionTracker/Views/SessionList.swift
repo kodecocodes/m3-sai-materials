@@ -31,7 +31,7 @@
 /// THE SOFTWARE.
 
 import SwiftUI
-import AppIntents
+import AppIntents //Lesson 3
 
 struct SessionList: View {
   @Environment(SessionDataManager.self)
@@ -43,8 +43,7 @@ struct SessionList: View {
   @AppStorage("displaySiriTip")
   private var displaySiriTip: Bool = true
 
-  @MainActor
-  private var filteredSessions: [Session] {
+  @MainActor private var filteredSessions: [Session] {
     let searchText = navigationModel.searchText
     guard !searchText.isEmpty else {
       return sessionManager.sessions
@@ -61,7 +60,7 @@ struct SessionList: View {
       if let sessionCollection = navigationModel.selectedCollection {
         @Bindable var navigationModel = navigationModel
         List(selection: $navigationModel.selectedSession) {
-          #if os(iOS) || os(visionOS)
+          #if os(iOS) || os(visionOS) //Lesson 3 down to line 73
           if sessionCollection.collectionType == .favorites {
             /**
             `SiriTipView` pairs with an intent the system uses as an App Shortcut. It provides a small view with the phrase from the

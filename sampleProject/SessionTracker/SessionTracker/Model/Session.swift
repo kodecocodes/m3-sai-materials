@@ -30,12 +30,10 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import AppIntents
 import Foundation
 
 /**
-Represents the fixed properties from `TrailData`, such as the trail name and length, but also properties that vary based on the individual,
-such as their distance to the trail.
+ Represents the fixed properties from `SessionData`, such as the session name and length, but also properties that vary.
 */
 struct Session: Identifiable, Hashable, Sendable {
   /// The trail's stable identifier.

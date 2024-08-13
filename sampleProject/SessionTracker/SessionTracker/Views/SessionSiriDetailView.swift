@@ -31,7 +31,7 @@
 /// THE SOFTWARE.
 
 import SwiftUI
-
+//LESSON 3
 struct SessionSiriDetailView: View {
   var session: Session
 

@@ -50,22 +50,38 @@ class SessionShortcuts: AppShortcutsProvider {
   - Tag: open_favorites_app_shortcut
   */
   static var appShortcuts: [AppShortcut] {
-    /// `GetSessionInfo` allows people to quickly check the conditions on their favorite trails.
+    /// `GetSessionDetails` allows people to quickly check the details on their favorite sessions.
     AppShortcut(
       intent: GetSessionDetails(),
       phrases: [
-        "Get \(\.$session) details with \(.applicationName)",
-        "Get details for \(\.$session) with \(.applicationName)"
+        "Get details in \(.applicationName)"//,
+        //NOTE as of the betas, the parameter style phrase does not work yet. The above phrase will ask the user for a session to get details on
+//        "Get \(\.$sessionToGet) details in \(.applicationName)",
+//        "Get details for session named \(\.$sessionToGet) in \(.applicationName)"
       ],
       shortTitle: "Get Details",
       systemImageName: "cloud.rainbow.half",
       parameterPresentation: ParameterPresentation(
-        for: \.$session,
-        summary: Summary("Get \(\.$session) conditions"),
-        optionsCollections: {
+        for: \.$sessionToGet,
+        summary: Summary("Get \(\.$sessionToGet) details")) {
           OptionsCollection(SessionEntityQuery(), title: "Favorite Sessions", systemImageName: "cloud.rainbow.half")
-        }
-      ))
+      }
+    )
+
+    AppShortcut(
+      intent: OpenURLInTabIntent(),
+      phrases: [
+        "Open \(\.$session) details with \(.applicationName) in a browser",
+        "Get details for \(\.$session) with \(.applicationName) in a browser"
+      ],
+      shortTitle: "Open in browser",
+      systemImageName: "cloud.rainbow.half",
+      parameterPresentation: ParameterPresentation(
+        for: \.$session,
+        summary: Summary("Open \(\.$session) details in a browser")) {
+          OptionsCollection(SessionEntityQuery(), title: "Favorite Sessions", systemImageName: "cloud.rainbow.half")
+      }
+    )
 
     /// `OpenFavorites` brings the app to the foreground and displays the contents of the Favorites collection in the UI.
     AppShortcut(
@@ -75,6 +91,7 @@ class SessionShortcuts: AppShortcutsProvider {
         "Show my favorite \(.applicationName)"
       ],
       shortTitle: "Open Favorites",
-      systemImageName: "star.circle")
+      systemImageName: "star.circle"
+    )
   }
 }

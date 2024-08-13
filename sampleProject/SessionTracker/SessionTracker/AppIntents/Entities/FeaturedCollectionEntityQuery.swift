@@ -33,7 +33,7 @@
 import AppIntents
 import Foundation
 import OSLog
-
+//LESSON 2
 /**
 `FeaturedCollectionEntityQuery` allows people to query the app for trail collections through a Find intent in the Shortcuts app,
 automatically providing filtering options based on the entity's properties — without the complexity of an `EntityPropertyQuery.`

@@ -31,7 +31,7 @@
 /// THE SOFTWARE.
 
 import SwiftUI
-import AppIntents
+import AppIntents //LESSON 2
 
 /// The sidebar column for the app, containing user info, trail collections, and a view that opens the Shortcuts app.
 struct SidebarColumn: View {
@@ -57,7 +57,7 @@ struct SidebarColumn: View {
           }
         }
       }
-      HStack {
+      HStack { //LESSON 2
         Spacer()
 
         /// `ShortcutsLink` opens this app's page in the Shortcuts app, so the user can see all of the App Shortcuts provided by the app.

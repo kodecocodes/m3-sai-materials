@@ -33,7 +33,7 @@
 import AppIntents
 import Foundation
 import OSLog
-
+//LESSON 2
 /**
 An `EntityPropertyQuery` queries entities by matching values against one or more of their properties. Conforming an entity query to
 `EntityPropertyQuery` automatically adds a Find intent to the list of intents in the Shortcuts app, providing UI to build complex predicates beyond

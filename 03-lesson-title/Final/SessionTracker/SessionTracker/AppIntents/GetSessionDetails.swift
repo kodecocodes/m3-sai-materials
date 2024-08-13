@@ -42,43 +42,41 @@ struct GetSessionDetails: AppIntent {
 
   /**
   A sentence that describes the intent, incorporating parameters as a natural part of the sentence. The Shortcuts editor displays this sentence
-  inline. Without the parameter summary, the Shortcuts editor displays the `trail` parameter as a separate row, making the intent harder to
+  inline. Without the parameter summary, the Shortcuts editor displays the `session` parameter as a separate row, making the intent harder to
   configure in a shortcut.
   */
   static var parameterSummary: some ParameterSummary {
-    Summary("Get information on \(\.$session)")
+    Summary("Get information on \(\.$sessionToGet)")
   }
 
   /**
-  The trail this intent gets information on. Either the individual provides this parameter when the intent runs, or it comes preconfigured
+  The session this intent gets information on. Either the individual provides this parameter when the intent runs, or it comes preconfigured
   in a shortcut.
   - Tag: parameter
   */
   @Parameter(title: "Session", description: "The session to get information on.")
-  var session: SessionEntity
+  var sessionToGet: SessionEntity
 
   @Dependency private var sessionManager: SessionDataManager
 
   /// - Tag: custom_response
   func perform() async throws -> some IntentResult & ReturnsValue<SessionEntity> & ProvidesDialog & ShowsSnippetView {
-    guard let sessionData = sessionManager.session(with: session.id) else {
+    guard let sessionData = sessionManager.session(with: sessionToGet.id) else {
       throw SessionIntentError.sessionNotFound
     }
-
     /**
     You provide a custom view by conforming the return type of the `perform()` function to the `ShowsSnippetView` protocol.
     */
     let snippet = SessionSiriDetailView(session: sessionData)
 
     /**
-    This intent displays a custom view that includes the trail conditions as part of the view. The dialog includes the trail conditions when
-    the system can only read the response, but not display it. When the system can display the response, the dialog omits the trail
+    This intent displays a custom view that includes the session conditions as part of the view. The dialog includes the session conditions when
+    the system can only read the response, but not display it. When the system can display the response, the dialog omits the session
     conditions.
     */
     let dialog = IntentDialog(
-      full: "The runtime reported for \(session.name) indicate: \(session.sessionDescription).",
+      full: "The runtime reported for \(sessionToGet.name) is \(sessionToGet.sessionLength ?? "") and has the following description: \(sessionToGet.sessionDescription!).",
       supporting: "Here's the information on the requested session.")
-
-    return .result(value: session, dialog: dialog, view: snippet)
+    return .result(value: sessionToGet, dialog: dialog, view: snippet)
   }
 }

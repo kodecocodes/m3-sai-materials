@@ -30,7 +30,7 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import AppIntents
+import AppIntents //LESSON 2
 import Foundation
 
 /// Represents a group of trails, such as Favorites, or those located in the same geographic region.
@@ -48,7 +48,7 @@ struct SessionCollection: Identifiable, Sendable {
   let collectionType: CollectionType
 
   /// The name of the collection to display in the UI.
-  @Property(title: "Name")
+  @Property(title: "Name") //LESSON 2
   var displayName: String
 
   /// A symbol to use with the collection in the UI.
@@ -66,6 +66,7 @@ struct SessionCollection: Identifiable, Sendable {
   }
 }
 
+//LESSON 2
 /// This structure conforms to `AppEntity`, so this type is available to people and to the system through App Intents.
 extension SessionCollection: AppEntity {
   /// Provide the system with the interface required to query `TrailCollection` structures.

@@ -12,12 +12,6 @@
 		040173F72C3B2AB4003175E0 /* SessionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040173F62C3B2AAE003175E0 /* SessionDataManager.swift */; };
 		040173FA2C3B2AD5003175E0 /* SessionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040173F92C3B2AD0003175E0 /* SessionEntity.swift */; };
 		040173FC2C3B2AE2003175E0 /* SessionEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040173FB2C3B2ADC003175E0 /* SessionEntityQuery.swift */; };
-		040173FE2C3B2AEF003175E0 /* SessionEntityQuery+PropertyQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040173FD2C3B2AE5003175E0 /* SessionEntityQuery+PropertyQuery.swift */; };
-		040174002C3B2B0C003175E0 /* FeaturedCollectionEntityQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040173FF2C3B2B04003175E0 /* FeaturedCollectionEntityQuery.swift */; };
-		040174042C3B2B53003175E0 /* GetSessionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040174032C3B2B48003175E0 /* GetSessionDetails.swift */; };
-		040174062C3B2B5F003175E0 /* OpenFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040174052C3B2B5C003175E0 /* OpenFavorites.swift */; };
-		040174082C3B2B6B003175E0 /* SessionIntentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040174072C3B2B67003175E0 /* SessionIntentError.swift */; };
-		0401740A2C3B2B78003175E0 /* SessionShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040174092C3B2B72003175E0 /* SessionShortcuts.swift */; };
 		0401740C2C3B2BBF003175E0 /* SessionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401740B2C3B2BBC003175E0 /* SessionList.swift */; };
 		0401740E2C3B2BCB003175E0 /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401740D2C3B2BC2003175E0 /* SessionDetailView.swift */; };
 		040174102C3B2C0F003175E0 /* SessionSiriDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401740F2C3B2C04003175E0 /* SessionSiriDetailView.swift */; };
@@ -25,9 +19,13 @@
 		040174142C3B2C37003175E0 /* SidebarColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040174132C3B2C32003175E0 /* SidebarColumn.swift */; };
 		040174162C3B2C56003175E0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040174152C3B2C53003175E0 /* DetailView.swift */; };
 		040174192C3B2CE8003175E0 /* SessionData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 040174182C3B2CE8003175E0 /* SessionData.plist */; };
+		0406421D2C5C6C1C0047D40F /* SessionShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406421C2C5C6C180047D40F /* SessionShortcuts.swift */; };
+		0406421F2C5C6C600047D40F /* GetSessionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406421E2C5C6C590047D40F /* GetSessionDetails.swift */; };
+		040642212C5C6C820047D40F /* SessionIntentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040642202C5C6C7C0047D40F /* SessionIntentError.swift */; };
+		040642232C5C6CB10047D40F /* OpenFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040642222C5C6CAC0047D40F /* OpenFavorites.swift */; };
+		045461A92C61AC18003BD8E6 /* MailSessionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045461A82C61AC13003BD8E6 /* MailSessionDetails.swift */; };
 		0474DB672C3CB6320097D5A7 /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474DB662C3CB62F0097D5A7 /* NavigationModel.swift */; };
 		0474DB6C2C3CC7D40097D5A7 /* OpenSessionIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474DB6B2C3CC7CF0097D5A7 /* OpenSessionIntent.swift */; };
-		0474DB6E2C3E24530097D5A7 /* SearchCodeBlockIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474DB6D2C3E244A0097D5A7 /* SearchCodeBlockIntent.swift */; };
 		1839F4B025190F2A00BB00F1 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1839F4AF25190F2A00BB00F1 /* AppMain.swift */; };
 		18D775C522AD944300AE281E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D775C422AD944300AE281E /* ContentView.swift */; };
 		18D775C722AD944400AE281E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C622AD944400AE281E /* Assets.xcassets */; };
@@ -41,12 +39,6 @@
 		040173F62C3B2AAE003175E0 /* SessionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDataManager.swift; sourceTree = "<group>"; };
 		040173F92C3B2AD0003175E0 /* SessionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEntity.swift; sourceTree = "<group>"; };
 		040173FB2C3B2ADC003175E0 /* SessionEntityQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEntityQuery.swift; sourceTree = "<group>"; };
-		040173FD2C3B2AE5003175E0 /* SessionEntityQuery+PropertyQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionEntityQuery+PropertyQuery.swift"; sourceTree = "<group>"; };
-		040173FF2C3B2B04003175E0 /* FeaturedCollectionEntityQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCollectionEntityQuery.swift; sourceTree = "<group>"; };
-		040174032C3B2B48003175E0 /* GetSessionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSessionDetails.swift; sourceTree = "<group>"; };
-		040174052C3B2B5C003175E0 /* OpenFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFavorites.swift; sourceTree = "<group>"; };
-		040174072C3B2B67003175E0 /* SessionIntentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionIntentError.swift; sourceTree = "<group>"; };
-		040174092C3B2B72003175E0 /* SessionShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionShortcuts.swift; sourceTree = "<group>"; };
 		0401740B2C3B2BBC003175E0 /* SessionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionList.swift; sourceTree = "<group>"; };
 		0401740D2C3B2BC2003175E0 /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
 		0401740F2C3B2C04003175E0 /* SessionSiriDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSiriDetailView.swift; sourceTree = "<group>"; };
@@ -54,10 +46,14 @@
 		040174132C3B2C32003175E0 /* SidebarColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarColumn.swift; sourceTree = "<group>"; };
 		040174152C3B2C53003175E0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		040174182C3B2CE8003175E0 /* SessionData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SessionData.plist; sourceTree = "<group>"; };
-		0406421B2C40B9DF0047D40F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0406421C2C5C6C180047D40F /* SessionShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionShortcuts.swift; sourceTree = "<group>"; };
+		0406421E2C5C6C590047D40F /* GetSessionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSessionDetails.swift; sourceTree = "<group>"; };
+		040642202C5C6C7C0047D40F /* SessionIntentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionIntentError.swift; sourceTree = "<group>"; };
+		040642222C5C6CAC0047D40F /* OpenFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFavorites.swift; sourceTree = "<group>"; };
+		045461A82C61AC13003BD8E6 /* MailSessionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailSessionDetails.swift; sourceTree = "<group>"; };
+		045461AE2C61B368003BD8E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0474DB662C3CB62F0097D5A7 /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 		0474DB6B2C3CC7CF0097D5A7 /* OpenSessionIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSessionIntent.swift; sourceTree = "<group>"; };
-		0474DB6D2C3E244A0097D5A7 /* SearchCodeBlockIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCodeBlockIntent.swift; sourceTree = "<group>"; };
 		1839F4AF25190F2A00BB00F1 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		18D775BD22AD944300AE281E /* SessionTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SessionTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D775C422AD944300AE281E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,10 +76,8 @@
 		040173F82C3B2AC5003175E0 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				040173FF2C3B2B04003175E0 /* FeaturedCollectionEntityQuery.swift */,
 				040173F92C3B2AD0003175E0 /* SessionEntity.swift */,
 				040173FB2C3B2ADC003175E0 /* SessionEntityQuery.swift */,
-				040173FD2C3B2AE5003175E0 /* SessionEntityQuery+PropertyQuery.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -99,12 +93,12 @@
 		043CF7F52C3B281100E7656C /* AppIntents */ = {
 			isa = PBXGroup;
 			children = (
-				0474DB6D2C3E244A0097D5A7 /* SearchCodeBlockIntent.swift */,
+				045461A82C61AC13003BD8E6 /* MailSessionDetails.swift */,
 				0474DB6B2C3CC7CF0097D5A7 /* OpenSessionIntent.swift */,
-				040174092C3B2B72003175E0 /* SessionShortcuts.swift */,
-				040174072C3B2B67003175E0 /* SessionIntentError.swift */,
-				040174052C3B2B5C003175E0 /* OpenFavorites.swift */,
-				040174032C3B2B48003175E0 /* GetSessionDetails.swift */,
+				0406421C2C5C6C180047D40F /* SessionShortcuts.swift */,
+				040642202C5C6C7C0047D40F /* SessionIntentError.swift */,
+				040642222C5C6CAC0047D40F /* OpenFavorites.swift */,
+				0406421E2C5C6C590047D40F /* GetSessionDetails.swift */,
 				040173F82C3B2AC5003175E0 /* Entities */,
 			);
 			path = AppIntents;
@@ -220,7 +214,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 18D775B422AD944300AE281E;
 			productRefGroup = 18D775BE22AD944300AE281E /* Products */;
@@ -274,22 +267,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				040174102C3B2C0F003175E0 /* SessionSiriDetailView.swift in Sources */,
-				0401740A2C3B2B78003175E0 /* SessionShortcuts.swift in Sources */,
-				0474DB6E2C3E24530097D5A7 /* SearchCodeBlockIntent.swift in Sources */,
 				0474DB6C2C3CC7D40097D5A7 /* OpenSessionIntent.swift in Sources */,
-				040174002C3B2B0C003175E0 /* FeaturedCollectionEntityQuery.swift in Sources */,
 				18D775C522AD944300AE281E /* ContentView.swift in Sources */,
 				040173FC2C3B2AE2003175E0 /* SessionEntityQuery.swift in Sources */,
+				0406421D2C5C6C1C0047D40F /* SessionShortcuts.swift in Sources */,
+				0406421F2C5C6C600047D40F /* GetSessionDetails.swift in Sources */,
 				040173FA2C3B2AD5003175E0 /* SessionEntity.swift in Sources */,
+				040642212C5C6C820047D40F /* SessionIntentError.swift in Sources */,
 				040173F32C3B2A82003175E0 /* Session.swift in Sources */,
-				040174082C3B2B6B003175E0 /* SessionIntentError.swift in Sources */,
-				040174042C3B2B53003175E0 /* GetSessionDetails.swift in Sources */,
-				040173FE2C3B2AEF003175E0 /* SessionEntityQuery+PropertyQuery.swift in Sources */,
 				0401740C2C3B2BBF003175E0 /* SessionList.swift in Sources */,
 				0401740E2C3B2BCB003175E0 /* SessionDetailView.swift in Sources */,
-				040174062C3B2B5F003175E0 /* OpenFavorites.swift in Sources */,
 				040174162C3B2C56003175E0 /* DetailView.swift in Sources */,
+				045461A92C61AC18003BD8E6 /* MailSessionDetails.swift in Sources */,
 				040173F52C3B2A9F003175E0 /* SessionCollection.swift in Sources */,
+				040642232C5C6CB10047D40F /* OpenFavorites.swift in Sources */,
 				1839F4B025190F2A00BB00F1 /* AppMain.swift in Sources */,
 				040174122C3B2C2B003175E0 /* SessionDetailColumn.swift in Sources */,
 				0474DB672C3CB6320097D5A7 /* NavigationModel.swift in Sources */,
@@ -304,7 +295,7 @@
 		18D775DA22AD963800AE281E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0406421B2C40B9DF0047D40F /* Base */,
+				045461AE2C61B368003BD8E6 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
