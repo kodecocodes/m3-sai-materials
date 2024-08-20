@@ -60,26 +60,11 @@ struct GetSessionDetails: AppIntent {
   @Dependency private var sessionManager: SessionDataManager
 
   /// - Tag: custom_response
-  func perform() async throws -> some IntentResult & ReturnsValue<SessionEntity> & ProvidesDialog & ShowsSnippetView {
-    guard let sessionData = sessionManager.session(with: sessionToGet.id) else {
+  func perform() async throws -> some IntentResult & ReturnsValue<SessionEntity> {
+    guard sessionManager.session(with: sessionToGet.id) != nil else {
       throw SessionIntentError.sessionNotFound
     }
-    /**
-    You provide a custom view by conforming the return type of the `perform()` function to the `ShowsSnippetView` protocol.
-    */
-    let snippet = SessionSiriDetailView(session: sessionData)
 
-    /**
-    This intent displays a custom view that includes the session conditions as part of the view. The dialog includes the session conditions when
-    the system can only read the response, but not display it. When the system can display the response, the dialog omits the session
-    conditions.
-    */
-    let dialog = IntentDialog(
-      full: """
-      The runtime reported for \(sessionToGet.name) is \(sessionToGet.sessionLength ?? "no runtime reported") 
-      and has the following description: \(sessionToGet.sessionDescription ?? "no description provided").
-      """,
-      supporting: "Here's the information on the requested session.")
-    return .result(value: sessionToGet, dialog: dialog, view: snippet)
+    return .result(value: sessionToGet)
   }
 }

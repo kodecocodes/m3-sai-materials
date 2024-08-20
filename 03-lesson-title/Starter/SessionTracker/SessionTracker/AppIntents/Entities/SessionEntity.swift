@@ -32,8 +32,6 @@
 
 import AppIntents
 import Foundation
-import CoreTransferable
-import UIKit
 
 /**
 Through its conformance to `AppEntity`, `SessionEntity` represents `Session` instances in an intent, such as a parameter.
@@ -45,17 +43,17 @@ intents need. Because this property may be sizable or expensive to retrieve, the
 */
 @AssistantEntity(schema: .browser.tab)
 struct SessionEntity: AppEntity, IndexedEntity {
-  /**
-  A localized name representing this entity as a concept people are familiar with in the app, including
-  localized variations based on the plural rules defined in the app's `.stringsdict` file (referenced
-  through the `table` parameter). The app may show this value to people when they configure an intent.
-  */
-  static var typeDisplayRepresentation: TypeDisplayRepresentation {
-    TypeDisplayRepresentation(
-      name: LocalizedStringResource("Session", table: "AppIntents"),
-      numericFormat: LocalizedStringResource("\(placeholder: .int) sessions", table: "AppIntents")
-    )
-  }
+//  /**
+//  A localized name representing this entity as a concept people are familiar with in the app, including
+//  localized variations based on the plural rules defined in the app's `.stringsdict` file (referenced
+//  through the `table` parameter). The app may show this value to people when they configure an intent.
+//  */
+//  static var typeDisplayRepresentation: TypeDisplayRepresentation {
+//    TypeDisplayRepresentation(
+//      name: LocalizedStringResource("Session", table: "AppIntents"),
+//      numericFormat: LocalizedStringResource("\(placeholder: .int) sessions", table: "AppIntents")
+//    )
+//  }
 
   /**
   Provide the system with the interface required to query `SessionEntity` structures.
@@ -110,65 +108,6 @@ struct SessionEntity: AppEntity, IndexedEntity {
     self.sessionDescription = session.sessionDescription
     self.sessionLength = session.sessionLength
     self.url = session.url
+    self.isPrivate = false
   }
-}
-
-extension SessionEntity: Transferable {
-  func toString() -> String {
-    return "\(self.name) (\(self.sessionLength ?? "No Length"): \(self.sessionDescription ?? "No Description"))"
-  }
-
-  func sessionAsJSON() async -> Data? {
-    var json: [String: String] = [:]
-    json["id"] = "\(self.id)"
-    json["name"] = self.name
-    json["imageName"] = self.imageName
-    json["sessionDescription"] = self.sessionDescription
-    json["sessionLength"] = self.sessionLength
-    json["url"] = self.url?.absoluteString
-    do {
-      return try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
-    } catch let myJSONError {
-      print(myJSONError)
-    }
-    return nil
-  }
-
-  func sessionAsJPEG() async -> SentTransferredFile? {
-    var transferredFile: SentTransferredFile?
-    let size = CGSize(width: 300, height: 500)
-    let frame = CGRect(origin: .zero, size: size)
-    let image = UIGraphicsImageRenderer(size: size).image { rendererContext in
-      UIColor.systemGray.setFill()
-      rendererContext.fill(CGRect(origin: .zero, size: size))
-      toString().draw(in: frame)
-    }
-
-    if let data = image.jpegData(compressionQuality: 0.4) {
-      let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-      let file = path.appendingPathComponent("session.jpg")
-      try? data.write(to: file)
-      transferredFile = SentTransferredFile(file)
-    }
-    return transferredFile
-  }
-
-  static var transferRepresentation: some TransferRepresentation {
-    DataRepresentation(exportedContentType: .json) { sessionEntity in
-      guard let sessionData = await sessionEntity.sessionAsJSON() else { throw TransferrableError.invalidJSON
-      }
-      return sessionData
-    }
-
-    FileRepresentation(exportedContentType: .jpeg) { sessionEntity in
-      guard let sessionJPEG = await sessionEntity.sessionAsJPEG() else { throw TransferrableError.noFileFound
-      }
-      return sessionJPEG
-    }
-  }
-}
-
-enum TransferrableError: Error {
-  case noFileFound
-  case invalidJSON
 }

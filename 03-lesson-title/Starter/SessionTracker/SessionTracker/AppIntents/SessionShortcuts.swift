@@ -54,8 +54,8 @@ class SessionShortcuts: AppShortcutsProvider {
     AppShortcut(
       intent: GetSessionDetails(),
       phrases: [
-        "Get details in \(.applicationName)"// ,
-        // NOTE as of the betas, the parameter style phrase does not work yet. The above phrase will ask the user for a session to get details on
+        "Get details in \(.applicationName)"
+      // NOTE as of the betas, the parameter style phrase does not work yet. The above phrase will ask the user for a session to get details on
 //        "Get \(\.$sessionToGet) details in \(.applicationName)",
 //        "Get details for session named \(\.$sessionToGet) in \(.applicationName)"
       ],
@@ -71,9 +71,10 @@ class SessionShortcuts: AppShortcutsProvider {
     AppShortcut(
       intent: OpenURLInTabIntent(),
       phrases: [
-        "Open \(\.$session) details with \(.applicationName) in a browser",
-        "Get details for \(\.$session) with \(.applicationName) in a browser"
-      ],
+        "Open session in browser in \(.applicationName)"
+//        "Open \(\.$session) details with \(.applicationName) in a browser",
+//        "Get details for \(\.$session) with \(.applicationName) in a browser"
+        ],
       shortTitle: "Open in browser",
       systemImageName: "cloud.rainbow.half",
       parameterPresentation: ParameterPresentation(

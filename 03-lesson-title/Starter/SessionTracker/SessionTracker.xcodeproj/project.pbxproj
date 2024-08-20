@@ -50,8 +50,8 @@
 		0406421E2C5C6C590047D40F /* GetSessionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSessionDetails.swift; sourceTree = "<group>"; };
 		040642202C5C6C7C0047D40F /* SessionIntentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionIntentError.swift; sourceTree = "<group>"; };
 		040642222C5C6CAC0047D40F /* OpenFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFavorites.swift; sourceTree = "<group>"; };
+		040E34F52C6BE2F70099F59F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		045461A82C61AC13003BD8E6 /* OpenURLInTabIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURLInTabIntent.swift; sourceTree = "<group>"; };
-		045461AE2C61B368003BD8E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0474DB662C3CB62F0097D5A7 /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 		0474DB6B2C3CC7CF0097D5A7 /* OpenSessionIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSessionIntent.swift; sourceTree = "<group>"; };
 		1839F4AF25190F2A00BB00F1 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
@@ -295,7 +295,7 @@
 		18D775DA22AD963800AE281E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				045461AE2C61B368003BD8E6 /* en */,
+				040E34F52C6BE2F70099F59F /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
