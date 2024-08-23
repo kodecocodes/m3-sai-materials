@@ -61,7 +61,7 @@ struct GetSessionDetails: AppIntent {
 
   /// - Tag: custom_response
   func perform() async throws -> some IntentResult & ReturnsValue<SessionEntity> {
-    guard sessionManager.session(with: sessionToGet.id) != nil else {
+    guard let sessionData = sessionManager.session(with: sessionToGet.id) else {
       throw SessionIntentError.sessionNotFound
     }
 
